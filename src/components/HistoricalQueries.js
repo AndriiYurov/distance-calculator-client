@@ -9,7 +9,7 @@ const HistoricalQueries = () => {
     fetchHistoricalQueries();
   }, []);
   const fetchHistoricalQueries = async () => {
-    const { data } = await axios.get("/history");
+    const { data } = await axios.get("http://localhost:8000/api/history");
     setHistoricalQueries(data);
   };
   return (
