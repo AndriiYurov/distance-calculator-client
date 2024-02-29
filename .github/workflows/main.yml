@@ -27,7 +27,8 @@ jobs:
       - run: |
           touch .env 
           echo "${{ secrets.PROD_ENV_FILE }}" > .env
-      - run: npm run build 
+      - run: npm run build
+      - run: npm test
 
       - name: rsync deployments
         uses: burnett01/rsync-deployments@6.0.0
