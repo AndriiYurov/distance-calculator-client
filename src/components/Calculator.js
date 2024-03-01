@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import "./Calculator.css";
 import axios from "axios";
 import CalculatorForm from "../forms/CalculatorForm";
@@ -13,6 +13,12 @@ const Calculator = () => {
   const { distance, setDistance } = useContext(StateContext);
   const distanceMi = (distance * 0.621371).toFixed(2);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!origin || !destination) {
+      setDistance("");
+    }
+  }, [origin, destination, setDistance]);
 
   const handleCancel = () => {
     if (!isOpen) {

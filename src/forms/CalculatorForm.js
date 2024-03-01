@@ -38,44 +38,53 @@ const CalculatorForm = ({ loading, distanceMi, handleSubmit }) => {
         />
       </div>
       <div className="col item3">
-        <label className="label-input-text">Unit</label>
+        <p className="label-input-text">Unit</p>
 
         <div>
           <input
             type="radio"
+            id="miles"
             className="input-radio"
             name="radio"
             value="miles"
             checked={selectedUnit === "miles"}
             onChange={(e) => setSelectedUnit(e.target.value)}
           />
-          <label className="label-radio-text">Miles</label>
+          <label htmlFor="miles" className="label-radio-text">
+            Miles
+          </label>
         </div>
         <div>
           <input
             type="radio"
+            id="kilometers"
             className="input-radio"
             name="radio"
             value="kilometers"
             checked={selectedUnit === "kilometers"}
             onChange={(e) => setSelectedUnit(e.target.value)}
           />
-          <label className="label-radio-text">Kilometers</label>
+          <label htmlFor="kilometers" className="label-radio-text">
+            Kilometers
+          </label>
         </div>
         <div>
           <input
             type="radio"
+            id="both"
             className="input-radio"
             name="radio"
             value="both"
             checked={selectedUnit === "both"}
             onChange={(e) => setSelectedUnit(e.target.value)}
           />
-          <label className="label-radio-text">Both</label>
+          <label htmlFor="both" className="label-radio-text">
+            Both
+          </label>
         </div>
       </div>
       <div className="col item4">
-        <label className="label-input-text">Distance</label>
+        <p className="label-input-text">Distance</p>
         <div>
           {selectedUnit === "both" ? (
             <span className="distance-text">
