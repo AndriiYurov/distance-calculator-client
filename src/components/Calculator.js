@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./Calculator.css";
 import axios from "axios";
 import CalculatorForm from "../forms/CalculatorForm";
 import Notification from "./Notification";
+import { StateContext } from "../context";
 
 const Calculator = () => {
-  const [origin, setOrigin] = useState("");
-  const [destination, setDestination] = useState("");
-  const [selectedUnit, setSelectedUnit] = useState("miles");
+  const { origin, setOrigin } = useContext(StateContext);
+  const { destination, setDestination } = useContext(StateContext);
+  const { selectedUnit, setSelectedUnit } = useContext(StateContext);
   const [loading, setLoading] = useState(false);
-  const [distance, setDistance] = useState("");
+  const { distance, setDistance } = useContext(StateContext);
   const distanceMi = (distance * 0.621371).toFixed(2);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -31,11 +32,11 @@ const Calculator = () => {
         setDistance(data.distance);
       }
       if (data.error) {
-        setIsOpen(true)
+        setIsOpen(true);
       }
       setLoading(false);
     } catch (err) {
-      setIsOpen(true)
+      setIsOpen(true);
       setLoading(false);
     }
   };

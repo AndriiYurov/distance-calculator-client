@@ -1,22 +1,20 @@
 import calculatorWhiteIcon from "../icons/calculator_white_icon.png";
 import calculatorGrayIcon from "../icons/calculator_grey_icon.png";
+import { useContext } from "react";
+import { StateContext } from "../context";
 
-const CalculatorForm = ({
-  destination,
-  origin,
-  loading,
-  distanceMi,
-  distance,
-  selectedUnit,
-  setSelectedUnit,
-  setOrigin,
-  setDestination,
-  handleSubmit,
-}) => {
+const CalculatorForm = ({ loading, distanceMi, handleSubmit }) => {
+  const { origin, setOrigin } = useContext(StateContext);
+  const { destination, setDestination } = useContext(StateContext);
+  const { selectedUnit, setSelectedUnit } = useContext(StateContext);
+  const { distance } = useContext(StateContext);
+
   return (
     <form className="grid-container" onSubmit={handleSubmit}>
       <div className="col item1">
-        <label htmlFor="origin" className="label-input-text">Source Adress</label>
+        <label htmlFor="origin" className="label-input-text">
+          Source Adress
+        </label>
         <input
           className="input-text"
           id="origin"
@@ -27,7 +25,9 @@ const CalculatorForm = ({
         />
       </div>
       <div className="col item2">
-        <label htmlFor="destination" className="label-input-text">Destination Address Adress</label>
+        <label htmlFor="destination" className="label-input-text">
+          Destination Address
+        </label>
         <input
           className="input-text"
           id="destination"

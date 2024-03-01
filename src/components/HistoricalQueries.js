@@ -16,7 +16,7 @@ const HistoricalQueries = () => {
     <div className="crawl">
       <div className="query-header">
         <p className="par-h">Historical Queries</p>
-        <p className="par-p">History of the user's queries</p>
+        <p className="par-p">History of the user's queries.</p>
       </div>
       <div className="table-header">
         <div className="table-header-row">

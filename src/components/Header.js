@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import { useParams } from "react-router-dom";
-import clockIcon from "../icons/clock_icon.png"
-import calculatorBlackIcon from "../icons/calculator_black_icon.png"
+import clockIcon from "../icons/clock_icon.png";
+import calculatorBlackIcon from "../icons/calculator_black_icon.png";
 
 const Header = () => {
-  const [current, setCurrent] = useState("");
+  const [current, setCurrent] = useState("/");
   const navigate = useNavigate();
   const checkRoute = useParams();
   useEffect(() => {
@@ -40,8 +40,10 @@ const Header = () => {
             {current === "/" && "View Historical Queries"}
             {current === "/history" && "Back to Calculator"}
           </span>
-          {current === "/" && <img src={clockIcon} width={14} alt="icon"/>}
-          {current === "/history" && <img src={calculatorBlackIcon} width={14} alt="icon"/>}
+          {current === "/" && <img src={clockIcon} width={14} alt="icon" />}
+          {current === "/history" && (
+            <img src={calculatorBlackIcon} width={14} alt="icon" />
+          )}
         </button>
       </div>
     </div>
