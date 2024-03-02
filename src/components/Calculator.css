@@ -125,8 +125,4 @@ input:focus {
     background-color: rgba(248, 248, 246, 1);
     padding-left: 15px;
   }
-
-  .btn-calc {
-    width: 80%;
-  }
 }
