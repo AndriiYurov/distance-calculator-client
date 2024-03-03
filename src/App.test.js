@@ -36,7 +36,7 @@ describe("App", () => {
         </StateProvider>
       </BrowserRouter>
     );
-    fireEvent.change(screen.getByLabelText(/Source Adress/i), {
+    fireEvent.change(screen.getByLabelText(/Source Address/i), {
       target: { value: "New York" },
     });
     fireEvent.change(screen.getByLabelText(/Destination Address/i), {
