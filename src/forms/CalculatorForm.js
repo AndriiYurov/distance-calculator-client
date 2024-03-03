@@ -13,7 +13,7 @@ const CalculatorForm = ({ loading, distanceMi, handleSubmit }) => {
     <form className="grid-container" onSubmit={handleSubmit}>
       <div className="col item1">
         <label htmlFor="origin" className="label-input-text">
-          Source Adress
+          Source Address
         </label>
         <input
           className="input-text"
